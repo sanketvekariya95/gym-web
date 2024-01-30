@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Form</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.containerr {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.containerr h2{
+    text-align: center;
+    color: #c11325;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="time"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#appointment-form button{
+    background-color: black;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+
+}
+.containerr a{
+    position: absolute;
+    left: 660px;
+    top: 354px;
+
+}
+.btnn{
+    background-color: black;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+   margin-top: 50px;
+}
+
+
+#appointment-status {
+    margin-top: 15px;
+    text-align: center;
+}
+
+    </style>
+</head>
+<body>
+    <div class="containerr">
+        <h2>Appointment Form</h2>
+        <form id="appointment-form">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+            <div class="form-group">
+                <label for="time">Time:</label>
+                <input type="time" id="time" name="time" required>
+            </div>
+            <button type="submit">Submit Appointment</button>
+        </form>
+        <a href="index.html" target="_blank" rel="noopener noreferrer"> <button type="menu" class="btnn">Back to Home</button></a>
+        <p id="appointment-status"></p>
+    </div>
+
+    <section class="contact" id="contact">
+        <div class="container">
+           <div class="content">
+               <div class="box form wow slideInLeft">
+                  <form>
+                     <input type="text" placeholder="Enter Name">
+                     <input type="text" placeholder="Enter Email">
+                     <input type="text" placeholder="Enter Mobile">
+                     <textarea placeholder="Enter Message"></textarea>
+                     <button type="submit">Send Message</button>
+                  </form>
+               </div>
+               <div class="box text wow slideInRight">
+                    <h2>Get Connected with Gym</h2>
+                     <p class="title-p">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                     <div class="info">
+                         <ul>
+                             <li><span class="fa fa-map-marker"></span>Peninsula Plaza C.G. road, Ahmedabad</li>
+                             <li><span class="fa fa-phone"></span> 91 9999999999 </li>
+                             <li><span class="fa fa-envelope"></span> info@gym.com</li>
+                         </ul>
+                     </div>
+                     <div class="social">
+                          <a href=""><span class="fa fa-facebook"></span></a>
+                          <a href=""><span class="fa fa-linkedin"></span></a>
+                          <a href=""><span class="fa fa-skype"></span></a>
+                          <a href=""><span class="fa fa-youtube-play"></span></a>
+                     </div>
+   
+                     <div class="copy">
+                         PowerBy &copy; utsav kapadiya
+                     </div>
+               </div>
+           </div>
+        </div>
+     </section>
+    <script src="script.js"></script>
+
+    <script>
+        document.getElementById('appointment-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    
+    // Get form values
+    var name = document.getElementById('name').value;
+    var email = document.getElementById('email').value;
+    var date = document.getElementById('date').value;
+    var time = document.getElementById('time').value;
+    
+   
+
+    var appointmentStatus = document.getElementById('appointment-status');
+    appointmentStatus.innerHTML = `Appointment for ${name} on ${date} at ${time} has been scheduled successfully!`;
+    document.getElementById('appointment-form').reset();
+});
+
+
+    </script>
+</body>
+</html>
